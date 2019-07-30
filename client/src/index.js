@@ -14,11 +14,11 @@ import {
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import * as serviceWorker from './serviceWorker';
-// Replace "book" with the name of the resource type
 import category from './reducers/category/';
 import categoryRoutes from './routes/category';
 import item from './reducers/item/';
 import itemRoutes from './routes/item';
+import defaultRoutes from './routes/default'
 
 const history = createBrowserHistory();
 const store = createStore(
@@ -38,6 +38,7 @@ ReactDOM.render(
       <Switch>
         {categoryRoutes}
         {itemRoutes}
+        {defaultRoutes}
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
