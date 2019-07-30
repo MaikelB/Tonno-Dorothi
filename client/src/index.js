@@ -14,37 +14,38 @@ import {
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 import * as serviceWorker from './serviceWorker';
-
-// import reducers
+// Replace "book" with the name of the resource type
+import category from './reducers/category/';
+import categoryRoutes from './routes/category';
 import item from './reducers/item/';
-
-//import routes
 import itemRoutes from './routes/item';
-
 
 const history = createBrowserHistory();
 const store = createStore(
   combineReducers({
     router: connectRouter(history),
     form,
+    category,
     item
     /* Replace book with the name of the resource type */
   }),
   applyMiddleware(routerMiddleware(history), thunk)
 );
+
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
+        {categoryRoutes}
         {itemRoutes}
-        {/* Replace bookRooutes with the name of the resource type */}
         <Route render={() => <h1>Not Found</h1>} />
       </Switch>
     </ConnectedRouter>
   </Provider>,
-   document.getElementById('root'));
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
