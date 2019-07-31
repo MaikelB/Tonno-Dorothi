@@ -24,7 +24,7 @@ class Category
      * @Assert\Length(
      *     min = 2,
      *     max = 42,
-     *     groups={"postValidation", "putValidation"} 
+     *     groups={"postValidation", "putValidation"}
      * )
 
      */
@@ -34,7 +34,7 @@ class Category
      * @ORM\Column(type="text", nullable=true)
      * @Assert\Length(
      *     min = 2,
-     *     groups={"postValidation", "putValidation"} 
+     *     groups={"postValidation", "putValidation"}
      */
     private $details;
 

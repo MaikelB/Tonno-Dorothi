@@ -25,16 +25,16 @@ class Item
      * @Assert\Length(
      *     min = 2,
      *     max = 42,
-     *     groups={"postValidation", "putValidation"} 
+     *     groups={"postValidation", "putValidation"}
      * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     *      * @Assert\Length(
-     *     min = 2,
-     *     groups={"postValidation", "putValidation"} 
+     * @Assert\Length(
+     * min = 2,
+     * groups={"postValidation", "putValidation"}
      * )
      */
     private $details;
